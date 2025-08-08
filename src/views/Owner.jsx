@@ -1,7 +1,7 @@
 export default function Owner() {
   return (
     <div className="min-h-screen flex flex-col items-center pt-12 gap-y-3 w-1/2">
-      <h1 className="text-4xl font-bold text-center">99 Neeti(นิติ) - JSD10</h1>
+      <h1 className="text-4xl font-bold text-center">99 Instructor - JSDX</h1>
       <img
         src="https://upload.wikimedia.org/wikipedia/en/d/de/BSG_-_William_Adama_%28Edward_James_Olmos%29.jpg"
         alt="user image"
