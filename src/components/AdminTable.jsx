@@ -45,11 +45,11 @@ export function AdminTable({ users, setUsers, fetchUsers, API }) {
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this user?")) return;
     await axios.delete(`${API}/${id}`);
-    setUsers(users.filter((user) => user.id !== id));
+    setUsers(users.filter((user) => user._id !== id));
   };
 
   const handleEdit = (user) => {
-    setEditId(user.id);
+    setEditId(user._id);
     setEditForm({
       name: user.name,
       lastname: user.lastname,
@@ -113,8 +113,8 @@ export function AdminTable({ users, setUsers, fetchUsers, API }) {
         </thead>
         <tbody>
           {users.map((user) => (
-            <tr key={user.id} className="bg-white">
-              {editId === user.id ? (
+            <tr key={user._id} className="bg-white">
+              {editId === user._id ? (
                 <>
                   <td className="border p-2 ">
                     <input
@@ -168,7 +168,7 @@ export function AdminTable({ users, setUsers, fetchUsers, API }) {
                       Edit
                     </button>
                     <button
-                      onClick={() => handleDelete(user.id)}
+                      onClick={() => handleDelete(user._id)}
                       className="cursor-pointer bg-rose-300 hover:bg-rose-400 text-black px-2 rounded-xl"
                     >
                       Delete

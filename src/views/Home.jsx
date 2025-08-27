@@ -16,7 +16,7 @@ export default function Home() {
   const fetchUsers = async () => {
     try {
       const res = await axios.get(API);
-      setUsers(res.data);
+      setUsers(res.data.members);
     } catch {
       alert("Failed to fetch users");
     }
