@@ -5,7 +5,9 @@ import axios from "axios";
 
 // const API_GET = "https://jsd5-mock-backend.onrender.com/members";
 
-const API = "https://67eca027aa794fb3222e43e2.mockapi.io/members";
+// const API = "https://67eca027aa794fb3222e43e2.mockapi.io/members";
+
+const API = "http://localhost:3000/members";
 
 export default function Home() {
   const [view, setView] = useState(null);
@@ -33,13 +35,13 @@ export default function Home() {
       <section className="flex justify-center gap-x-3 font-bold">
         <button
           onClick={() => setView("user")}
-          className=" p-5 bg-sky-200 flex rounded-2xl cursor-pointer border hover:bg-sky-300"
+          className=" p-5 bg-neutral-600 text-white flex rounded-2xl cursor-pointer border hover:bg-neutral-500"
         >
           User Section
         </button>
         <button
           onClick={() => setView("admin")}
-          className=" p-5 bg-rose-100 flex rounded-2xl cursor-pointer border hover:bg-rose-200"
+          className=" p-5 bg-gray-900 text-white flex rounded-2xl cursor-pointer border hover:bg-gray-800"
         >
           Admin Section
         </button>
