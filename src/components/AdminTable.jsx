@@ -23,7 +23,7 @@ export function AdminTable({ users, setUsers, fetchUsers, API }) {
   };
 
   const handleEditChange = (e) => {
-    setForm({ ...editForm, [e.target.name]: e.target.value });
+    setEditForm({ ...editForm, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -142,13 +142,13 @@ export function AdminTable({ users, setUsers, fetchUsers, API }) {
                   </td>
                   <td className="border p-2 ">
                     <button
-                      onClick={() => handleEditSave(user)}
+                      onClick={() => handleEditSave(user._id)}
                       className="cursor-pointer bg-teal-300 hover:bg-teal-400 text-black px-2 rounded-xl"
                     >
                       Save
                     </button>
                     <button
-                      onClick={() => handleEditCancel(user)}
+                      onClick={handleEditCancel}
                       className="cursor-pointer bg-stone-300 hover:bg-stone-400 text-black px-2 rounded-xl"
                     >
                       Cancel
